@@ -33,7 +33,7 @@
             // 
             // tx_serviço
             // 
-            this.tx_serviço.Location = new System.Drawing.Point(264, 150);
+            this.tx_serviço.Location = new System.Drawing.Point(108, 161);
             this.tx_serviço.Name = "tx_serviço";
             this.tx_serviço.Size = new System.Drawing.Size(210, 89);
             this.tx_serviço.TabIndex = 0;
@@ -45,7 +45,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(432, 450);
             this.Controls.Add(this.tx_serviço);
             this.Name = "Form1";
             this.Text = "Form1";

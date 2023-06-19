@@ -15,6 +15,7 @@ namespace Prova___2bimestre
         public Form2()
         {
             InitializeComponent();
+            lb_valorfinal.Text = "";
         }
 
         private void tx_cancelar_Click(object sender, EventArgs e)
@@ -34,72 +35,82 @@ namespace Prova___2bimestre
             double pix = 0.1;
 
 
-
-            //PARA CALCULAR A FORMATAÇÃO
-            if(box_servico.Text == "Formatação")
+            try
             {
-                if(box_pagamento.Text == "Dinheiro")
+                //PARA CALCULAR A FORMATAÇÃO
+                if (box_servico.Text == "Formatação")
                 {
-                    valorFi = 100 - (100 * dinheiro) ;
-                    lb_valorfinal.Text = "O valor Total é " + valorFi;
-                }
-                else if(box_pagamento.Text == "Pix")
+                    if (box_pagamento.Text == "Dinheiro")
+                    {
+                        valorFi = 100 - (100 * dinheiro);
+                        lb_valorfinal.Text = "O valor Total é " + valorFi;
+                    }
+                    else if (box_pagamento.Text == "Pix")
                     {
                         valorFi = 100 - (100 * pix);
                         lb_valorfinal.Text = "O valor Total é " + valorFi;
                     }
-                else if (box_pagamento.Text == "Cartão")
+                    else if (box_pagamento.Text == "Cartão")
+                    {
+                        valorFi = 100;
+                        lb_valorfinal.Text = "O valor Total é " + valorFi;
+                    }
+                }
+
+
+
+
+                //PARA CALCULAR A LIMPEZA
+                if (box_servico.Text == "Limpeza")
                 {
-                    valorFi = 100;
-                    lb_valorfinal.Text = "O valor Total é " + valorFi;
+                    if (box_pagamento.Text == "Dinheiro")
+                    {
+                        valorFi = 50 - (50 * dinheiro);
+                        lb_valorfinal.Text = "O valor Total é " + valorFi;
+                    }
+                    else if (box_pagamento.Text == "Pix")
+                    {
+                        valorFi = 50 - (50 * pix);
+                        lb_valorfinal.Text = "O valor Total é " + valorFi;
+                    }
+                    else if (box_pagamento.Text == "Cartão")
+                    {
+                        valorFi = 50;
+                        lb_valorfinal.Text = "O valor Total é " + valorFi;
+                    }
+                }
+
+
+
+
+                //PARA CALCULAR TROCA DE PEÇA
+                if (box_servico.Text == "Troca de peça")
+                {
+                    if (box_pagamento.Text == "Dinheiro")
+                    {
+                        valorFi = 200 - (200 * dinheiro);
+                        lb_valorfinal.Text = "O valor Total é " + valorFi;
+                    }
+                    else if (box_pagamento.Text == "Pix")
+                    {
+                        valorFi = 200 - (200 * pix);
+                        lb_valorfinal.Text = "O valor Total é " + valorFi;
+                    }
+                    else if (box_pagamento.Text == "Cartão")
+                    {
+                        valorFi = 200;
+                        lb_valorfinal.Text = "O valor Total é " + valorFi;
+                    }
                 }
             }
-
-
-
-
-            //PARA CALCULAR A LIMPEZA
-            if (box_servico.Text == "Limpeza")
+            catch(Exception ex)
             {
-                if (box_pagamento.Text == "Dinheiro")
-                {
-                    valorFi = 50 - (50 * dinheiro);
-                    lb_valorfinal.Text = "O valor Total é " + valorFi;
-                }
-                else if (box_pagamento.Text == "Pix")
-                {
-                    valorFi = 50 - (50 * pix);
-                    lb_valorfinal.Text = "O valor Total é " + valorFi;
-                }
-                else if (box_pagamento.Text == "Cartão")
-                {
-                    valorFi = 50;
-                    lb_valorfinal.Text = "O valor Total é " + valorFi;
-                }
+                MessageBox.Show("Algo deu errado no seu programa");
             }
 
 
 
-
-            //PARA CALCULAR TROCA DE PEÇA
-            if (box_servico.Text == "Troca de peça")
-            {
-                if (box_pagamento.Text == "Dinheiro")
-                {
-                    valorFi = 200 - (200 * dinheiro);
-                    lb_valorfinal.Text = "O valor Total é " + valorFi;
-                }
-                else if (box_pagamento.Text == "Pix")
-                {
-                    valorFi = 200 - (200 * pix);
-                    lb_valorfinal.Text = "O valor Total é " + valorFi;
-                }
-                else if (box_pagamento.Text == "Cartão")
-                {
-                    valorFi = 200;
-                    lb_valorfinal.Text = "O valor Total é " + valorFi;
-                }
-            }
+           
 
         }
     }
